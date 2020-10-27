@@ -23,6 +23,7 @@ Partial Class FFDx0MApp
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FFDx0MApp))
         Me.FFDx0SHADOW = New Guna.UI2.WinForms.Guna2ShadowForm(Me.components)
         Me.FFDx0DRAG = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
         Me.FFDx0APPxPANEL = New Guna.UI2.WinForms.Guna2GradientPanel()
@@ -41,10 +42,16 @@ Partial Class FFDx0MApp
         Me.FFDx0DOWNLOADPROGRESS = New Guna.UI2.WinForms.Guna2ProgressBar()
         Me.FFDx0DOWNLOADLABEL = New System.Windows.Forms.TextBox()
         Me.FDDx0DONETITLE = New System.Windows.Forms.Label()
+        Me.FDDx9APPICONNOTIFY = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.FDDx9NOTIPAINT = New Guna.UI2.WinForms.Guna2NotificationPaint(Me.components)
+        Me.FDDx9CONTEXTMENU = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EXITToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ADMINxFDDxPROCESS = New System.Diagnostics.Process()
         Me.FFDx0APPxPANEL.SuspendLayout()
         Me.FFDx0DOWNLOADSPANEL.SuspendLayout()
         CType(Me.FFDx0SPLITBOX, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FFDx0PANELCONTROLS.SuspendLayout()
+        Me.FDDx9CONTEXTMENU.SuspendLayout()
         Me.SuspendLayout()
         '
         'FFDx0DRAG
@@ -361,6 +368,45 @@ Partial Class FFDx0MApp
         Me.FDDx0DONETITLE.Text = "D O N E. "
         Me.FDDx0DONETITLE.Visible = False
         '
+        'FDDx9APPICONNOTIFY
+        '
+        Me.FDDx9APPICONNOTIFY.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        Me.FDDx9APPICONNOTIFY.BalloonTipText = "FDD - Running."
+        Me.FDDx9APPICONNOTIFY.BalloonTipTitle = "FDD - Running."
+        Me.FDDx9APPICONNOTIFY.ContextMenuStrip = Me.FDDx9CONTEXTMENU
+        Me.FDDx9APPICONNOTIFY.Icon = CType(resources.GetObject("FDDx9APPICONNOTIFY.Icon"), System.Drawing.Icon)
+        Me.FDDx9APPICONNOTIFY.Text = "FDD - Running."
+        Me.FDDx9APPICONNOTIFY.Visible = True
+        '
+        'FDDx9NOTIPAINT
+        '
+        Me.FDDx9NOTIPAINT.Font = New System.Drawing.Font("Bahnschrift SemiLight Condensed", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        'FDDx9CONTEXTMENU
+        '
+        Me.FDDx9CONTEXTMENU.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EXITToolStripMenuItem})
+        Me.FDDx9CONTEXTMENU.Name = "FDDx9CONTEXTMENU"
+        Me.FDDx9CONTEXTMENU.Size = New System.Drawing.Size(105, 26)
+        '
+        'EXITToolStripMenuItem
+        '
+        Me.EXITToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
+        Me.EXITToolStripMenuItem.Font = New System.Drawing.Font("Bahnschrift SemiLight Condensed", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EXITToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.EXITToolStripMenuItem.Name = "EXITToolStripMenuItem"
+        Me.EXITToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
+        Me.EXITToolStripMenuItem.Text = "E X I T"
+        '
+        'ADMINxFDDxPROCESS
+        '
+        Me.ADMINxFDDxPROCESS.StartInfo.Domain = ""
+        Me.ADMINxFDDxPROCESS.StartInfo.LoadUserProfile = False
+        Me.ADMINxFDDxPROCESS.StartInfo.Password = Nothing
+        Me.ADMINxFDDxPROCESS.StartInfo.StandardErrorEncoding = Nothing
+        Me.ADMINxFDDxPROCESS.StartInfo.StandardOutputEncoding = Nothing
+        Me.ADMINxFDDxPROCESS.StartInfo.UserName = ""
+        Me.ADMINxFDDxPROCESS.SynchronizingObject = Me
+        '
         'FFDx0MApp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -369,6 +415,8 @@ Partial Class FFDx0MApp
         Me.ClientSize = New System.Drawing.Size(1280, 720)
         Me.Controls.Add(Me.FFDx0APPxPANEL)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "FFDx0MApp"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FFD | Downloads."
@@ -379,6 +427,7 @@ Partial Class FFDx0MApp
         CType(Me.FFDx0SPLITBOX, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FFDx0PANELCONTROLS.ResumeLayout(False)
         Me.FFDx0PANELCONTROLS.PerformLayout()
+        Me.FDDx9CONTEXTMENU.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -401,4 +450,9 @@ Partial Class FFDx0MApp
     Friend WithEvents FFDx0DOWNLOADPROGRESS As Guna.UI2.WinForms.Guna2ProgressBar
     Friend WithEvents FFDx0DOWNLOADLABEL As TextBox
     Friend WithEvents FDDx0DONETITLE As Label
+    Friend WithEvents FDDx9APPICONNOTIFY As NotifyIcon
+    Friend WithEvents FDDx9NOTIPAINT As Guna.UI2.WinForms.Guna2NotificationPaint
+    Friend WithEvents FDDx9CONTEXTMENU As ContextMenuStrip
+    Friend WithEvents EXITToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ADMINxFDDxPROCESS As Process
 End Class

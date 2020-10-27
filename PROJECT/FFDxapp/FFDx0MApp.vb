@@ -24,15 +24,16 @@ Public Class FFDx0MApp
             FFDx0DOWNLOADURL.BorderColor = Color.Orange
         End If
 
-        If FFDx0DOWNLOADURL.Text.Contains("https, http") Then
-            'error{i}
-            FFDx2SAVEDxDLxURL = ""
-            FFDx0DOWNLOADURL.BorderColor = Color.Red
-        Else
+        If FFDx0DOWNLOADURL.Text.Contains("/") Then
+            FDDx9NOTIPAINT.Visible = True
             FFDx0DODOWNLOAD()
             'success
             FFDx2SAVEDxDLxURL = FFDx0DOWNLOADURL.Text
             FFDx0DOWNLOADURL.BorderColor = Color.Orange
+        Else
+            'error{i}
+            FFDx2SAVEDxDLxURL = ""
+            FFDx0DOWNLOADURL.BorderColor = Color.Red
         End If
     End Sub
 
@@ -97,5 +98,9 @@ Public Class FFDx0MApp
         If FFDx0LOCALDLPATH.ShowDialog() = DialogResult.OK Then
             FFDx0DOWNLOADPATH.Text = FFDx0LOCALDLPATH.SelectedPath
         End If
+    End Sub
+
+    Private Sub EXITToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        Application.Exit()
     End Sub
 End Class

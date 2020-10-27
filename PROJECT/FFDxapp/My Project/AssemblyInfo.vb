@@ -1,4 +1,5 @@
-﻿Imports System
+﻿Imports System.Resources
+Imports System
 Imports System.Reflection
 Imports System.Runtime.InteropServices
 
@@ -8,12 +9,12 @@ Imports System.Runtime.InteropServices
 
 ' Werte der Assemblyattribute überprüfen
 
-<Assembly: AssemblyTitle("FFDxapp")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("FFDxapp")>
-<Assembly: AssemblyCopyright("Copyright ©  2020")>
-<Assembly: AssemblyTrademark("")>
+<Assembly: AssemblyTitle("FFD - Fast File Downloader.")>
+<Assembly: AssemblyDescription("Download files, easy and fast with FFD.")>
+<Assembly: AssemblyCompany("DigitalGency Anonymous")>
+<Assembly: AssemblyProduct("FFD 2020.")>
+<Assembly: AssemblyCopyright("Copyright © DigitalGency  2020")>
+<Assembly: AssemblyTrademark("FFD 2020, DigitalGency Anonymous")>
 
 <Assembly: ComVisible(False)>
 
@@ -31,5 +32,6 @@ Imports System.Runtime.InteropServices
 ' indem Sie "*" wie unten gezeigt eingeben:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("1.0.0.0")>
-<Assembly: AssemblyFileVersion("1.0.0.0")>
+<Assembly: AssemblyVersion("1.0.0.1")>
+<Assembly: AssemblyFileVersion("1.3.8.9")>
+<Assembly: NeutralResourcesLanguage("en")>
