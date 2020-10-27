@@ -64,6 +64,8 @@ Public Class FFDx0MApp
             FFDx0DOWNLOADNAME.Text = FFDx0DOWNLOADNAME.Text & ".wav"
         ElseIf FFDx0DOWNLOADURL.Text.Contains("ogg") Then
             FFDx0DOWNLOADNAME.Text = FFDx0DOWNLOADNAME.Text & ".ogg"
+        ElseIf FFDx0DOWNLOADURL.Text.Contains("msi") Then
+            FFDx0DOWNLOADNAME.Text = FFDx0DOWNLOADNAME.Text & ".msi"
         End If
 
         AddHandler FFDx2WEBCLIENT.DownloadProgressChanged, AddressOf ProgChanged
@@ -90,6 +92,8 @@ Public Class FFDx0MApp
     End Sub
 
     Private Sub FFDx0CREATEDOWNLOAD_Click(sender As Object, e As EventArgs) Handles FFDx0CREATEDOWNLOAD.Click
+        FFDx0DOWNLOADLABEL.Text = 0
+        FFDx0DOWNLOADPROGRESS.Value = 0
         FDDx0DONETITLE.Visible = False
         FFDx1CHECKDOWNLOADURL()
     End Sub
